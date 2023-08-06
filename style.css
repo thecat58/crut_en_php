@@ -18,12 +18,11 @@ html {
 }
 
 body {
+    margin: 0;
+    padding: 0; 
     height: 100vh;
-
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-
-    background-size: contain;
+    
+    background-size: cover; 
     background-image: url(./static/img/perfume-fondo.jpg);
 }
 
@@ -143,6 +142,54 @@ fieldset {
     border: none;
 }
 
+
+
+.form-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para el label */
+.form-img label {
+    font-size: 16px;
+    margin-bottom: 10px;
+    background-color: #77777779;
+}
+
+/* Estilos para el input de carga de imágenes */
+.form-img input[type="file"] {
+    border: none;
+    padding: 8px;
+    font-size: 14px;
+    background-color:  var(--blanco);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-img input[type="file"]:hover {
+    background-color: var(--blanco);
+}
+
+.form-img input[type="file"]:focus {
+    outline: none;
+}
+
+/* Estilos para ocultar el input de carga de imágenes */
+.form-img input[type="file"] {
+    display: none;
+}
+
+/* Estilos para mostrar la imagen seleccionada */
+.selected-image {
+    display: block;
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+}
+
+
 .form-field {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -161,10 +208,44 @@ fieldset {
     gap: 5px;
 }
 
-.form-buttons input {
-    width: 75px;
-    height: 35px;
+.form-field input  {
+  
+    border: none;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+    color:  var(--cafe);
+    transition: border-bottom-color 0.3s ease;
+    width: 100%;
 }
+
+.form-field input:hover {
+    border-bottom-color: #66666693;
+}
+.form-field input:focus {
+    outline: none;
+    border-bottom-color: var(--dorado);
+}
+
+.form-field input::placeholder {
+    color: #777;
+}
+.input-icon {
+    position: relative;
+}
+.input-icon input {
+    padding-left: 40px;
+}
+.input-icon .icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+
 
 .form-buttons input[type="submit"],
 .form-buttons input[type="reset"] {
@@ -253,7 +334,9 @@ fieldset {
 
 .item-img {
     width: 100%;
+    max-width:200px;
     height: 100%;
+    min-height:100px
 }
 
 .item-descripcion h3 {

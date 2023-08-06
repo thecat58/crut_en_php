@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumeria ADSO</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 
 <body>
@@ -24,18 +26,31 @@
             <div class="form-title">
                 <h2>Ingresar perfume</h2>
             </div>
-            <form action="" method="post">
+            <form action="post.php" method="post" enctype="multipart/form-data">
                 <fieldset class="form-img">
-                    <label for="foto_field">Foto:</label>
-                    <input type="file" name="foto" id="foto_field">
+                    <label for="foto"> Seleccione una foto para su producto:
+                    </label>
+                    <input type="file" name="foto" id="foto">
                 </fieldset>
                 <fieldset class="form-field">
-                    <label for="nombre_field">Nombre:</label>
-                    <input type="text" name="nombre" id="nombre_field">
+                    <label for="nombre">Nombre:</label>
+                    <i class="icon fas fa-perfume"></i>
+                    <input type="text" name="nombre" id="nombre" required > 
                 </fieldset>
                 <fieldset class="form-field">
-                    <label for="precio_field">Precio:</label>
-                    <input type="number" name="parecio" id="precio_field">
+                    <i class="icon fas fa-dollar-sign"></i>
+                    <label for="precio">Precio:</label>
+                    <input type="number" name="precio" id="precio" required>
+                </fieldset>
+                <fieldset class="form-field">
+                    <i class="icon fas fa-ruler-combined"></i>
+                    <label for="tamaño">Tamaño:</label>
+                    <input type="text" name="tamaño" id="tamaño" required>
+                </fieldset>
+                <fieldset class="form-field">
+                    <i class="icon fas fa-tag"></i>
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" id="marca" required>
                 </fieldset>
                 <div class="form-buttons">
                     <input type="submit" value="Agregar">
@@ -43,7 +58,7 @@
                 </div>
             </form>
         </section>
-        <section class="main-inventario">
+        <!-- <section class="main-inventario">
             <div class="inventario-title">
                 <h2>Inventario</h2>
             </div>
@@ -180,7 +195,52 @@
                         <button class="botones-editar">Editar</button>
                     </div>
                 </div>
-        </section>
+        </section> -->
+        <section class="main-inventario">
+            <div class="inventario-title">
+                <h2>Inventario</h2>
+            </div>
+            <div class="inventario-container">
+
+                <?php
+                require_once "conexion.php"; // Incluir el archivo de conexión
+
+                // Consulta para obtener los datos de la base de datos
+                $sql = "SELECT nombre, precio, tamaño, marca, foto FROM perfumes_la4°";
+                $resultado = $conn->query($sql);
+
+                if ($resultado->num_rows > 0) {
+                    while ($fila = $resultado->fetch_assoc()) {
+                        $nombre = $fila["nombre"];
+                        $precio = $fila["precio"];
+                        $tamaño = $fila["tamaño"];
+                        $marca = $fila["marca"];
+                        $rutaImagen = $fila["foto"];
+
+                        echo "<div class='inventario-item'>";
+                        echo "<img class='item-img' src='$rutaImagen' alt='Imagen del perfume'>";
+                        echo "<div class='item-descripcion'>";
+                        echo "<h3>$nombre</h3>";
+                        echo "<span>Precio: $precio</span> <br>";
+                        echo "<span>Tamaño: $tamaño</span> <br>";
+                        echo "<span>Marca: $marca</span> <br>";
+                        echo "</div>";
+                        echo "<div class='item-botones'>";
+                        echo "<button class='botones-eliminar'>Eliminar</button>";
+                        echo "<button class='botones-editar'>Editar</button>";
+                        echo "</div>";
+                        echo "</div>";
+                    }
+                } else {
+                    echo "No se encontraron registros.";
+                }
+
+                // Cerrar la conexión
+                $conn->close();
+                ?>
+
+            </div>
+
     </main>
 
     <footer>
