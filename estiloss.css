@@ -1,8 +1,7 @@
 :root {
     --blanco: #D9D9D9;
-    --negro: #1D2614;
+    --morado: #7916ac;
     --dorado: #F28705;
-    --cafe: #8C3503;
     --gris: #8C827D;
 }
 
@@ -14,17 +13,18 @@
 
 html {
     font-size: 62.5%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS';
 }
 
 body {
     margin: 0;
-    padding: 0; 
+    padding: 0;
     height: 100vh;
-    
-    background-size: cover; 
-    background-image: url(./static/img/perfume-fondo.jpg);
+    background-image: url(./static/img/fondo.jpg);
+    background-size: cover;
+    background-position: center;
 }
+
 
 header,
 main,
@@ -36,7 +36,7 @@ footer {
 header,
 footer {
     color: var(--blanco);
-    background-color: var(--negro);
+    background-color: var(--morado);
 }
 
 
@@ -48,23 +48,15 @@ header {
     align-items: center;
 }
 
-.header-title {
+.title {
     font-size: 2rem;
-}
-
-.header-search {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 5px;
-
-    font-size: 1.5rem;
 }
 
 .header-search input[type="submit"] {
     width: 75px;
     height: 35px;
 
-    color: var(--blanco);
+    color: var(--morado);
 
     background-color: var(--dorado);
     border: none;
@@ -72,73 +64,50 @@ header {
 
 main {
     padding: 30px;
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
 }
 
 main section {
     height: 100%;
 }
 
-.main-form {
+.formulario {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
 
+
+.title-formulario{
+    padding: 5px 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--morado);
+}
+
+.formulario h2 {
+    font-size: 2rem;
+    color: var(--dorado);
+}
+
+.formulario form {
     padding: 10px;
 
-    width: 30%;
+    width: 42%;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 5px;
-
-}
-
-
-.form-title {
-
-    padding: 5px 10%;
-
-    width: 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: var(--negro);
-}
-
-.main-form h2 {
-
-    font-size: 2rem;
-    color: var(--dorado);
-
-}
-
-.main-form form {
-
-    padding: 5% 2%;
-
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-
-    font-size: 1.5rem;
-
-    background-color: var(--negro);
-
+    background-color: #d9d9d9c0;
+    
 }
 
 fieldset {
     padding: 5px;
-
-    color: var(--blanco);
-
+    color: var(--morado);
     border: none;
 }
 
@@ -154,7 +123,10 @@ fieldset {
 .form-img label {
     font-size: 16px;
     margin-bottom: 10px;
-    background-color: #77777779;
+    background-color: var(--blanco);
+    width: 200px;
+    height: 50px;
+    
 }
 
 /* Estilos para el input de carga de imágenes */
@@ -162,14 +134,14 @@ fieldset {
     border: none;
     padding: 8px;
     font-size: 14px;
-    background-color:  var(--blanco);
+    background-color:  var(--morado);
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .form-img input[type="file"]:hover {
-    background-color: var(--blanco);
+    background-color: var(--morado);
 }
 
 .form-img input[type="file"]:focus {
@@ -215,13 +187,13 @@ fieldset {
     padding: 10px;
     font-size: 16px;
     background-color: transparent;
-    color:  var(--cafe);
+    color:  var(--morado);
     transition: border-bottom-color 0.3s ease;
     width: 100%;
 }
 
 .form-field input:hover {
-    border-bottom-color: #66666693;
+    border-bottom-color: var(--morado);
 }
 .form-field input:focus {
     outline: none;
@@ -229,7 +201,7 @@ fieldset {
 }
 
 .form-field input::placeholder {
-    color: #777;
+    color: var(--morado);
 }
 .input-icon {
     position: relative;
@@ -242,35 +214,35 @@ fieldset {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    color: #777;
+    color: var(--morado);
 }
 
 
-
-.form-buttons input[type="submit"],
 .form-buttons input[type="reset"] {
+    color: var(--morado);
+    border: none;
+}
+
+
+.form-buttons input[type="submit"]
+{ 
     color: var(--blanco);
     border: none;
 }
 
 
 .form-buttons input[type="submit"] {
-    background-color: var(--dorado);
+    background-color: var(--morado);
 }
 
 .form-buttons input[type="reset"] {
-    background-color: var(--cafe);
+    background-color: var(--blanco);
 }
 
 .main-inventario {
-    padding: 10px;
-    width: 70%;
-
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
 
 }
 
@@ -281,55 +253,46 @@ fieldset {
 .inventario-title {
 
     padding: 5px 10%;
-
     width: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     color:var(--dorado);
-
-    background-color: var(--negro);
+    background-color: var(--morado);
 }
 
 .inventario-container {
 
     padding: 30px;
-
     width: 100%;
     max-height: 500px;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     gap: 10px;
-
     overflow-y: scroll;
-
 }
+
+
 
 .inventario-item {
 
     padding: 10px;
-
     min-width: 200px;
     height: 250px;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     row-gap: 5px;
-
-    background-color: var(--negro);
+    background-color: var(--blanco);
 }
 
 .inventario-item h3{
-    color: var(--dorado);
+    color: var(--gris);
 }
 
 .inventario-item span{
-    color: var(--blanco);
+    color: var(--morado);
 }
 
 .item-img {
@@ -362,17 +325,12 @@ fieldset {
     height: 35px;
 }
 
-.botones-eliminar{
-    color:var(--blanco);
 
-    background-color: var(--cafe);
-    border: none;
-}
 
 .botones-editar{
-    color: var(--negro);
+    color: var(--blanco);
 
-    background-color: var(--blanco);
+    background-color: var(--morado);
     border: none;
 }
 

@@ -5,26 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumeria ADSO</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estiloss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
 
 <body>
     <header>
-        <div class="header-title">
-            <h1>Gestión de Inventario</h1>
+        <div class="title">
+            <h1>COSMETICOS DOÑA GATA  </h1>
         </div>
-        <form class="header-search" action="">
-            <input type="search" name="" id="buscar">
-            <input type="submit" value="Buscar">
-        </form>
+     
     </header>
 
     <main>
-        <section class="main-form">
-            <div class="form-title">
-                <h2>Ingresar perfume</h2>
+        <section class="formulario">
+            <div class="title-formulario">
+                <h2>Ingrese su producto (●'◡'●)</h2>
             </div>
             <form action="post.php" method="post" enctype="multipart/form-data">
                 <fieldset class="form-img">
@@ -54,151 +51,13 @@
                 </fieldset>
                 <div class="form-buttons">
                     <input type="submit" value="Agregar">
-                    <input type="reset" value="Cancelar">
+                    <input src="/index.php" type="reset" value="Cancelar">
                 </div>
             </form>
         </section>
-        <!-- <section class="main-inventario">
-            <div class="inventario-title">
-                <h2>Inventario</h2>
-            </div>
-            <div class="inventario-container">
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-                <div class="inventario-item">
-                    <img class="item-img" src="" alt="">
-                    <div class="item-descripcion">
-                        <h3>Perfume 1</h3>
-                        <span>Precio: $2000</span>
-                    </div>
-                    <div class="item-botones">
-                        <button class="botones-eliminar">Eliminar</button>
-                        <button class="botones-editar">Editar</button>
-                    </div>
-                </div>
-        </section> -->
         <section class="main-inventario">
             <div class="inventario-title">
-                <h2>Inventario</h2>
+                <h2>COSMETICOS 😎</h2>
             </div>
             <div class="inventario-container">
 
@@ -206,11 +65,12 @@
                 require_once "conexion.php"; // Incluir el archivo de conexión
 
                 // Consulta para obtener los datos de la base de datos
-                $sql = "SELECT nombre, precio, tamaño, marca, foto FROM perfumes_la4°";
+                $sql = "SELECT id, nombre, precio, tamaño, marca, foto FROM perfumes_la4°";
                 $resultado = $conn->query($sql);
 
                 if ($resultado->num_rows > 0) {
                     while ($fila = $resultado->fetch_assoc()) {
+                        $id=$fila["id"];
                         $nombre = $fila["nombre"];
                         $precio = $fila["precio"];
                         $tamaño = $fila["tamaño"];
@@ -218,16 +78,19 @@
                         $rutaImagen = $fila["foto"];
 
                         echo "<div class='inventario-item'>";
+                       
                         echo "<img class='item-img' src='$rutaImagen' alt='Imagen del perfume'>";
+                        echo "<h3>PRODUCTO: $id</h3>";
                         echo "<div class='item-descripcion'>";
                         echo "<h3>$nombre</h3>";
-                        echo "<span>Precio: $precio</span> <br>";
+                        echo "<span>Precio: $ $precio</span> <br>";
                         echo "<span>Tamaño: $tamaño</span> <br>";
                         echo "<span>Marca: $marca</span> <br>";
                         echo "</div>";
+                        
                         echo "<div class='item-botones'>";
-                        echo "<button class='botones-eliminar'>Eliminar</button>";
-                        echo "<button class='botones-editar'>Editar</button>";
+                        echo "<a href='eliminar.php?id=" . $id . "'><button class='botones-editar'>Eliminar</button></a>";
+                        echo "<a href='editar.php?id=" . $id . "'><button class='botones-editar'>Editar</button></a>";
                         echo "</div>";
                         echo "</div>";
                     }
@@ -238,9 +101,8 @@
                 // Cerrar la conexión
                 $conn->close();
                 ?>
-
+            
             </div>
-
     </main>
 
     <footer>
@@ -254,7 +116,6 @@
         </section>
         <section>
             <h3>Trabajado por:</h3>
-            <span>Jhon Wilmer Azcárate</span>
             <span>Jorge Enrique Muñoz</span>
         </section>
     </footer>
