@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfumeria ADSO</title>
-    <link rel="stylesheet" href="estiloss.css">
+<link rel="stylesheet" href="./estilos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 </head>
@@ -17,6 +17,12 @@
         </div>
      
     </header>
+    <section class="buscar">
+        <form action="index.php" method="get">
+            <input type="text" name="buscar" placeholder="Buscar producto">
+            <button type="submit">Buscar</button>
+        </form>
+    </section>
 
     <main>
         <section class="formulario">
@@ -63,43 +69,35 @@
 
                 <?php
                 require_once "conexion.php"; // Incluir el archivo de conexión
-
-                // Consulta para obtener los datos de la base de datos
-                $sql = "SELECT id, nombre, precio, tamaño, marca, foto FROM perfumes_la4°";
-                $resultado = $conn->query($sql);
-
+                include "buscar.php";
                 if ($resultado->num_rows > 0) {
                     while ($fila = $resultado->fetch_assoc()) {
                         $id=$fila["id"];
-                        $nombre = $fila["nombre"];
-                        $precio = $fila["precio"];
-                        $tamaño = $fila["tamaño"];
-                        $marca = $fila["marca"];
-                        $rutaImagen = $fila["foto"];
-
-                        echo "<div class='inventario-item'>";
-                       
-                        echo "<img class='item-img' src='$rutaImagen' alt='Imagen del perfume'>";
-                        echo "<h3>PRODUCTO: $id</h3>";
-                        echo "<div class='item-descripcion'>";
-                        echo "<h3>$nombre</h3>";
-                        echo "<span>Precio: $ $precio</span> <br>";
-                        echo "<span>Tamaño: $tamaño</span> <br>";
-                        echo "<span>Marca: $marca</span> <br>";
-                        echo "</div>";
-                        
-                        echo "<div class='item-botones'>";
-                        echo "<a href='eliminar.php?id=" . $id . "'><button class='botones-editar'>Eliminar</button></a>";
-                        echo "<a href='editar.php?id=" . $id . "'><button class='botones-editar'>Editar</button></a>";
-                        echo "</div>";
-                        echo "</div>";
+                                    $nombre = $fila["nombre"];
+                                    $precio = $fila["precio"];
+                                    $tamaño = $fila["tamaño"];
+                                    $marca = $fila["marca"];
+                                    $rutaImagen = $fila["foto"];
+            
+                                    echo "<div class='inventario-item'>";
+                                   
+                                    echo "<img class='item-img' src='$rutaImagen' alt='Imagen del perfume'>";
+                                    echo "<h3>PRODUCTO: $id</h3>";
+                                    echo "<div class='item-descripcion'>";
+                                    echo "<h3>$nombre</h3>";
+                                    echo "<span>Precio: $ $precio</span> <br>";
+                                    echo "<span>Tamaño: $tamaño</span> <br>";
+                                    echo "<span>Marca: $marca</span> <br>";
+                                    echo "</div>";
+                                    
+                                    echo "<div class='item-botones'>";
+                                    echo "<a href='eliminar.php?id=" . $id . "'><button class='botones-editar'>Eliminar</button></a>";
+                                    echo "<a href='editar.php?id=" . $id . "'><button class='botones-editar'>Editar</button></a>";
+                                    echo "</div>";
+                                    echo "</div>";
                     }
-                } else {
-                    echo "No se encontraron registros.";
+                
                 }
-
-                // Cerrar la conexión
-                $conn->close();
                 ?>
             
             </div>
